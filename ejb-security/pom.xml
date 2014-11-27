@@ -194,7 +194,11 @@
                              also adding the project build directory -->
                         <argument>-classpath</argument>
                         <classpath>
-                        </classpath>
+                        </classpath>                    
+                        <argument>-Djava.security.krb5.realm=DAL.WILDFLY.ORG</argument>
+                        <argument>-Djava.security.krb5.kdc=kdc.dal.wildfly.org</argument>
+                        <argument>-Djavax.security.auth.useSubjectCredsOnly=false</argument>
+                        <argument>-Dsun.security.krb5.debug=true</argument>
                         <argument>org.jboss.as.quickstarts.ejb_security.RemoteClient</argument>
                     </arguments>
                 </configuration>

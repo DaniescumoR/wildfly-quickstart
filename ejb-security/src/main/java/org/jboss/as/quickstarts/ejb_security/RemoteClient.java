@@ -18,6 +18,8 @@
 package org.jboss.as.quickstarts.ejb_security;
 
 import java.util.Hashtable;
+import java.util.Map.Entry;
+import java.util.Properties;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -33,6 +35,12 @@ public class RemoteClient {
      * @param args
      */
     public static void main(String[] args) throws Exception {
+        Properties props = System.getProperties();
+        for (Entry<Object, Object> current : props.entrySet()) {
+            System.out.println(current.getKey().toString() + " - " + current.getValue().toString());
+        }
+
+
         System.out.println("\n\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n\n");
 
         SecuredRemote remote = lookupEJB();
